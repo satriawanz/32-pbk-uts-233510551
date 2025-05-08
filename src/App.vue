@@ -20,6 +20,12 @@ const addList = () => {
   <div>
     <input type="text" v-model="newList" />
     <button @click="addList">Add</button>
+
+    <ul>
+      <li v-for="item in list" :key="item.id">
+        {{ item.name }}
+      </li>
+    </ul>
   </div>
 </template>
 
