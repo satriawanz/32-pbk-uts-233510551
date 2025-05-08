@@ -14,6 +14,11 @@ const addList = () => {
     newList.value = '';
   }
 }
+
+const removeList = (id) => {
+  list.value = list.value.filter((item) => item.id !== id);
+}
+
 </script>
 
 <template>
@@ -27,6 +32,7 @@ const addList = () => {
         <span :class="item.isDone ? 'line-through text-gray-400' : ''">
           {{ item.name }}
         </span>
+        <button @click="removeList(item.id)">Remove</button>
       </li>
     </ul>
   </div>
