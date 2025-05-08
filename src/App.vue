@@ -23,7 +23,10 @@ const addList = () => {
 
     <ul>
       <li v-for="item in list" :key="item.id">
-        {{ item.name }}
+        <input type="checkbox" v-model="item.isDone" />
+        <span :class="item.isDone ? 'line-through text-gray-400' : ''">
+          {{ item.name }}
+        </span>
       </li>
     </ul>
   </div>
